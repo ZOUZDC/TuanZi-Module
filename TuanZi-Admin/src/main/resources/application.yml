@@ -1,0 +1,6 @@
+server:
+  port: 80
+
+
+tuanzi:
+  version:  @project.version@
