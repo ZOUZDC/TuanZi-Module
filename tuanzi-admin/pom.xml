@@ -9,7 +9,7 @@
         <version>0.25.3-SNAPSHOT</version>
     </parent>
 
-    <artifactId>TuanZi-Admin</artifactId>
+    <artifactId>tuanzi-admin</artifactId>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>

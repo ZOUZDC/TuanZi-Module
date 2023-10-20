@@ -13,7 +13,7 @@
     <description>TuanZi模块化系统</description>
 
     <modules>
-        <module>TuanZi-Admin</module>
+        <module>tuanzi-admin</module>
     </modules>
 
     <properties>
