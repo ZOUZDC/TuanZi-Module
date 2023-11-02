@@ -9,7 +9,7 @@
         <version>0.27.4-SNAPSHOT</version>
     </parent>
 
-    <artifactId>tuanzi-admin</artifactId>
+    <artifactId>tuanzi-framework</artifactId>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
@@ -18,14 +18,10 @@
     </properties>
 
     <dependencies>
-
         <dependency>
             <groupId>com.github.zouzdc</groupId>
-            <artifactId>tuanzi-framework</artifactId>
+            <artifactId>tuanzi-common-core</artifactId>
         </dependency>
-
-
     </dependencies>
-
 
 </project>

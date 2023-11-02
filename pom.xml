@@ -6,17 +6,14 @@
 
     <groupId>com.github.zouzdc</groupId>
     <artifactId>tuanzi-module</artifactId>
-
     <name>TuanZi-Module</name>
-    <version>0.25.3-SNAPSHOT</version>
 
     <description>TuanZi模块化系统</description>
-
-    <modules>
-        <module>tuanzi-admin</module>
-    </modules>
+    <version>${tuanzi.version}</version>
 
     <properties>
+        <tuanzi.version>0.27.4-SNAPSHOT</tuanzi.version>
+
         <java.version>17</java.version>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
@@ -24,12 +21,53 @@
     </properties>
 
 
+
+
+    <modules>
+        <module>tuanzi-admin</module>
+        <module>tuanzi-common-core</module>
+        <module>tuanzi-framework</module>
+    </modules>
+
+
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.github.zouzdc</groupId>
+                <artifactId>tuanzi-framework</artifactId>
+                <version>${tuanzi.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.zouzdc</groupId>
+                <artifactId>tuanzi-common-core</artifactId>
+                <version>${tuanzi.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.zouzdc</groupId>
+                <artifactId>tuanzi-admin</artifactId>
+                <version>${tuanzi.version}</version>
+            </dependency>
+           <!--第三方框架-->
+            <dependency>
+                <groupId>com.alibaba.fastjson2</groupId>
+                <artifactId>fastjson2</artifactId>
+                <version>2.0.41</version>
+            </dependency>
+
+
+        </dependencies>
+    </dependencyManagement>
+
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>3.1.4</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
+
+
+
 
     <dependencies>
         <dependency>
