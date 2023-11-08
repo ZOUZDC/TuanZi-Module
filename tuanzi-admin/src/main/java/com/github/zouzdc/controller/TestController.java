@@ -14,12 +14,13 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class TestController {
     @RequestMapping("/")
-    public R ok(){
+    public R ok() {
         return R.ok();
     }
+
     @RequestMapping("/err")
-    public R err(){
-        if(1/0==1)
+    public R err() {
+        if (1 / 0 == 1)
             throw new TzException("错误");
         return R.ok();
     }

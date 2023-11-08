@@ -9,11 +9,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  * @author ZDC
- * @Description Error页面处理,ControllerAdvice无法捕获的异常. 参照BasicErrorController
+ * @Description Error页面处理, ControllerAdvice无法捕获的异常. 参照BasicErrorController
  * @Link org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController
  * @Version 1.0.0
  * @Date 2023/11/3 0:29
- *
  */
 
 @RestController
@@ -28,7 +27,7 @@ public class TzErrorController implements ErrorController {
     }
 
     protected HttpStatus getStatus(HttpServletRequest request) {
-        Integer statusCode = (Integer)request.getAttribute("jakarta.servlet.error.status_code");
+        Integer statusCode = (Integer) request.getAttribute("jakarta.servlet.error.status_code");
         if (statusCode == null) {
             return HttpStatus.INTERNAL_SERVER_ERROR;
         } else {

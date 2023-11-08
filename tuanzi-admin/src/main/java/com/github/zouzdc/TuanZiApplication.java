@@ -16,9 +16,9 @@ public class TuanZiApplication {
     private String version;
 
     @Bean
-    public void CommandLineRunner(){
-       String context = """
-                
+    public void CommandLineRunner() {
+        String context = """
+                                
                 ---------------------------------------------
                 小团子版本
                 %s

@@ -21,14 +21,11 @@
     </properties>
 
 
-
-
     <modules>
         <module>tuanzi-admin</module>
         <module>tuanzi-common-core</module>
         <module>tuanzi-framework</module>
     </modules>
-
 
 
     <dependencyManagement>
@@ -48,7 +45,7 @@
                 <artifactId>tuanzi-admin</artifactId>
                 <version>${tuanzi.version}</version>
             </dependency>
-           <!--第三方框架-->
+            <!--第三方框架-->
             <dependency>
                 <groupId>com.alibaba.fastjson2</groupId>
                 <artifactId>fastjson2</artifactId>
@@ -65,8 +62,6 @@
         <version>3.1.4</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-
-
 
 
     <dependencies>

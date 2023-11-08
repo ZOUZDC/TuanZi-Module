@@ -1,10 +1,10 @@
 package com.github.zouzdc.exception;
 
 /**
- * @description 框架功能异常 TuanZi
- * @version 1.0.0
- * @date 2023/11/2 23:31
  * @author ZDC
+ * @version 1.0.0
+ * @description 框架功能异常 TuanZi
+ * @date 2023/11/2 23:31
  */
 public class TzException extends RuntimeException {
     public TzException() {

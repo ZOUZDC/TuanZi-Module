@@ -1,10 +1,10 @@
 package com.github.zouzdc.exception;
 
 /**
- * @description 业务异常
- * @version 1.0.0
- * @date 2023/11/2 23:31
  * @author ZDC
+ * @version 1.0.0
+ * @description 业务异常
+ * @date 2023/11/2 23:31
  */
 public class BizException extends RuntimeException {
     public BizException() {

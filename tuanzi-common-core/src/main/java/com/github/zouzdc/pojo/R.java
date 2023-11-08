@@ -3,10 +3,10 @@ package com.github.zouzdc.pojo;
 import java.util.HashMap;
 
 /**
- * @description 统一返回对象   200成功 3xx权限 5xx错误
- * @version 1.0.0
- * @date 2023/11/2 23:33
  * @author ZDC
+ * @version 1.0.0
+ * @description 统一返回对象   200成功 3xx权限 5xx错误
+ * @date 2023/11/2 23:33
  */
 public class R extends HashMap<String, Object> {
 
@@ -17,7 +17,6 @@ public class R extends HashMap<String, Object> {
         // 当500时存在
         //this.put("err", "");
     }
-
 
 
     @Override
@@ -51,8 +50,8 @@ public class R extends HashMap<String, Object> {
     }
 
 
-    private R addErr(Throwable ex){
-        if (ex.getStackTrace()!=null && ex.getStackTrace().length>0) {
+    private R addErr(Throwable ex) {
+        if (ex.getStackTrace() != null && ex.getStackTrace().length > 0) {
             /* 报错内容加密
             String msg=ex.getStackTrace()[0].toString();
             try {
@@ -60,9 +59,9 @@ public class R extends HashMap<String, Object> {
             } catch (UnsupportedEncodingException e) {
                 throw new RuntimeException(e);
             }*/
-            this.put("err",ex.getMessage() +" -> "+ex.getStackTrace()[0].toString());
-        }else{
-            this.put("err",ex.getMessage());
+            this.put("err", ex.getMessage() + " -> " + ex.getStackTrace()[0].toString());
+        } else {
+            this.put("err", ex.getMessage());
         }
         return this;
     }

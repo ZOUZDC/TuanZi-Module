@@ -26,10 +26,8 @@ public class TzControllerAdvice extends ResponseEntityExceptionHandler {
 
     @ExceptionHandler(TzException.class)
     public R handelTzException(HttpServletRequest request, Throwable ex) {
-       return R.err(ex);
+        return R.err(ex);
     }
-
-
 
 
     /*放在最低下,兜底*/
