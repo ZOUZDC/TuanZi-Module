@@ -5,26 +5,16 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.github.zouzdc</groupId>
-        <artifactId>tuanzi-module</artifactId>
+        <artifactId>tuanzi-common</artifactId>
         <version>${tuanzi.version}</version>
     </parent>
 
-    <artifactId>tuanzi-framework</artifactId>
+    <artifactId>tuanzi-common-core-base</artifactId>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-
-    <dependencies>
-        <dependency>
-            <groupId>com.github.zouzdc</groupId>
-            <artifactId>tuanzi-common-core-base</artifactId>
-            <version>${tuanzi.version}</version>
-        </dependency>
-
-
-    </dependencies>
 
 </project>

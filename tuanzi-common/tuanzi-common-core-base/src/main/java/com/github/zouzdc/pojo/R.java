@@ -5,10 +5,10 @@ import java.util.HashMap;
 /**
  * @author ZDC
  * @version 1.0.0
- * @description 统一返回对象   200成功 3xx权限 5xx错误
+ * @description 统一返回对象  200成功 3xx权限 5xx错误
  * @date 2023/11/2 23:33
  */
-public class R extends HashMap<String, Object> {
+public class R<T> extends HashMap<String, Object> {
 
     public R(int code, String msg, Object data) {
         this.put("code", code);
@@ -26,12 +26,18 @@ public class R extends HashMap<String, Object> {
     }
 
 
+    /**
+     * @description 操作成功
+     * @version 1.0.0
+     * @date 2023/11/9 21:13
+     * @author ZDC
+     */
     public static R ok() {
         return new R(200, "OK", null);
     }
 
     /***
-     * 操作成功,当参数为1个,则将数据直接指向data字典, 当 参数为偶数个时,将单数参数设置为Map的key,每个随后的参数设置为Value
+     *  操作成功,当参数为1个,则将数据直接指向data字典, 当 参数为偶数个时,将单数参数设置为Map的key,每个随后的参数设置为Value
      * @param data
      * @return
      */
@@ -40,13 +46,36 @@ public class R extends HashMap<String, Object> {
     }
 
 
-    /*错误信息*/
+    /**
+     * @description 操作失败 ,并添加失败原因
+     * @version 1.0.0
+     * @date 2023/11/9 21:18
+     * @author ZDC
+     */
     public static R err(String msg) {
         return new R(500, msg, null);
     }
 
+    /**
+     * @description 操作失败,系统调用
+     * @version 1.0.0
+     * @date 2023/11/9 21:19
+     * @author ZDC
+     */
     public static R err(Throwable ex) {
-        return new R(500, ex.getMessage(), null).addErr(ex);
+        return new R(500, ex.getMessage()=="null"?"系统错误": ex.getMessage(), null).addErr(ex);
+    }
+
+    /**
+     * 获取data数据
+     * @return 返回获取到的数据，如果数据为空，则返回null
+     */
+    public  T getData(){
+        Object data = this.get("data");
+        if (data!=null){
+            return (T)data;
+        }
+        return null;
     }
 
 
@@ -66,13 +95,15 @@ public class R extends HashMap<String, Object> {
         return this;
     }
 
-    private static Object integrationData(Object... data) {
 
-        if (data == null || data.length == 0) {
+
+
+    private static Object integrationData(Object... data) {
+        int length=0;
+
+        if (data == null || (length =data.length)== 0 ) {
             return null;
         }
-
-        int length = data.length;
 
         if (length == 1) {
             return data[0];
@@ -85,6 +116,7 @@ public class R extends HashMap<String, Object> {
             }
             return map;
         }
-        throw new RuntimeException("返回结果参数数量不正确");
+        throw new RuntimeException("参数数量不正确");
     }
+
 }

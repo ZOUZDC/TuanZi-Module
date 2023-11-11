@@ -13,7 +13,6 @@
 
     <properties>
         <tuanzi.version>0.27.4-SNAPSHOT</tuanzi.version>
-
         <java.version>17</java.version>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
@@ -21,10 +20,21 @@
     </properties>
 
 
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>3.1.4</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+
+
+
     <modules>
         <module>tuanzi-admin</module>
-        <module>tuanzi-common-core</module>
         <module>tuanzi-framework</module>
+        <module>tuanzi-common</module>
+        <module>tuanzi-biz</module>
+
     </modules>
 
 
@@ -33,11 +43,6 @@
             <dependency>
                 <groupId>com.github.zouzdc</groupId>
                 <artifactId>tuanzi-framework</artifactId>
-                <version>${tuanzi.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.github.zouzdc</groupId>
-                <artifactId>tuanzi-common-core</artifactId>
                 <version>${tuanzi.version}</version>
             </dependency>
             <dependency>
@@ -56,12 +61,6 @@
         </dependencies>
     </dependencyManagement>
 
-    <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.1.4</version>
-        <relativePath/> <!-- lookup parent from repository -->
-    </parent>
 
 
     <dependencies>
