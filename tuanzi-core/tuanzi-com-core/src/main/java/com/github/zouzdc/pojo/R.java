@@ -44,7 +44,9 @@ public class R<T> extends HashMap<String, Object> {
     public static R ok(Object... data) {
         return new R(200, "OK", integrationData(data));
     }
-
+    public static R okMsg(String msg) {
+        return new R(200, msg,null);
+    }
 
     /**
      * @description 操作失败 ,并添加失败原因

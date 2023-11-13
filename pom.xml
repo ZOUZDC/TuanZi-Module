@@ -9,10 +9,10 @@
     <name>TuanZi-Module</name>
 
     <description>TuanZi模块化系统</description>
-    <version>${tuanzi.version}</version>
+    <version>${rversion}</version>
 
     <properties>
-        <tuanzi.version>0.27.4-SNAPSHOT</tuanzi.version>
+        <rversion>0.27.4-SNAPSHOT</rversion>
         <java.version>17</java.version>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
@@ -32,8 +32,10 @@
     <modules>
         <module>tuanzi-admin</module>
         <module>tuanzi-framework</module>
-        <module>tuanzi-common</module>
+        <module>tuanzi-core</module>
         <module>tuanzi-biz</module>
+        <module>tuanzi-plugins</module>
+        <module>tuanzi-plugins/tuanzi-plugins-generator</module>
 
     </modules>
 
@@ -43,12 +45,12 @@
             <dependency>
                 <groupId>com.github.zouzdc</groupId>
                 <artifactId>tuanzi-framework</artifactId>
-                <version>${tuanzi.version}</version>
+                <version>${rversion}</version>
             </dependency>
             <dependency>
                 <groupId>com.github.zouzdc</groupId>
                 <artifactId>tuanzi-admin</artifactId>
-                <version>${tuanzi.version}</version>
+                <version>${rversion}</version>
             </dependency>
             <!--第三方框架-->
             <dependency>

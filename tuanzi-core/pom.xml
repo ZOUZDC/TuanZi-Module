@@ -6,13 +6,17 @@
     <parent>
         <groupId>com.github.zouzdc</groupId>
         <artifactId>tuanzi-module</artifactId>
-        <version>${tuanzi.version}</version>
+        <version>${rversion}</version>
     </parent>
 
-    <artifactId>tuanzi-common</artifactId>
+    <artifactId>tuanzi-core</artifactId>
     <packaging>pom</packaging>
+
+
     <modules>
-        <module>tuanzi-common-core-base</module>
+        <module>tuanzi-com-core</module>
+        <module>tuanzi-biz-core</module>
+        <module>tuanzi-plugins-core</module>
     </modules>
 
     <properties>

@@ -6,7 +6,7 @@
     <parent>
         <groupId>com.github.zouzdc</groupId>
         <artifactId>tuanzi-module</artifactId>
-        <version>${tuanzi.version}</version>
+        <version>${rversion}</version>
     </parent>
 
     <artifactId>tuanzi-framework</artifactId>
@@ -20,8 +20,8 @@
     <dependencies>
         <dependency>
             <groupId>com.github.zouzdc</groupId>
-            <artifactId>tuanzi-common-core-base</artifactId>
-            <version>${tuanzi.version}</version>
+            <artifactId>tuanzi-com-core</artifactId>
+            <version>${rversion}</version>
         </dependency>
 
 

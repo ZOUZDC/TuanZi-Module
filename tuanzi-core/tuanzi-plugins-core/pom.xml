@@ -5,11 +5,11 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.github.zouzdc</groupId>
-        <artifactId>tuanzi-common</artifactId>
-        <version>${tuanzi.version}</version>
+        <artifactId>tuanzi-core</artifactId>
+        <version>${rversion}</version>
     </parent>
 
-    <artifactId>tuanzi-common-core-base</artifactId>
+    <artifactId>tuanzi-plugins-core</artifactId>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
