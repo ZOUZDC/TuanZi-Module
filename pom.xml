@@ -35,7 +35,7 @@
         <module>tuanzi-core</module>
         <module>tuanzi-biz</module>
         <module>tuanzi-plugins</module>
-        <module>tuanzi-plugins/tuanzi-plugins-generator</module>
+
 
     </modules>
 
