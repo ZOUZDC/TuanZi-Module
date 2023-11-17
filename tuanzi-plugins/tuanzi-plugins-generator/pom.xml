@@ -7,7 +7,6 @@
         <groupId>com.github.zouzdc</groupId>
         <artifactId>tuanzi-module</artifactId>
         <version>${revision}</version>
-        <relativePath>../../pom.xml</relativePath>
     </parent>
 
     <artifactId>tuanzi-plugins-generator</artifactId>
