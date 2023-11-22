@@ -5,30 +5,16 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.github.zouzdc</groupId>
-        <artifactId>tuanzi-module</artifactId>
+        <artifactId>tuanzi-framework</artifactId>
         <version>${revision}</version>
     </parent>
 
-    <artifactId>tuanzi-framework</artifactId>
-    <packaging>pom</packaging>
+    <artifactId>tuanzi-framework-comm</artifactId>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-
-    <modules>
-        <module>tuanzi-framework-mp</module>
-        <module>tuanzi-framework-comm</module>
-    </modules>
-
-    <dependencies>
-        <dependency>
-            <groupId>com.github.zouzdc</groupId>
-            <artifactId>tuanzi-com-core</artifactId>
-            <version>${revision}</version>
-        </dependency>
-    </dependencies>
 
 </project>
