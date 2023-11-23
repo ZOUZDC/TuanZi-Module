@@ -1,11 +1,11 @@
-package com.github.zouzdc.pojo.base;
+package com.github.zouzdc.base;
 
+import com.alibaba.fastjson2.annotation.JSONField;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
-import java.io.Serializable;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -16,14 +16,15 @@ import java.util.Map;
 @ToString
 @EqualsAndHashCode
 @NoArgsConstructor
-public class BaseQueryVｏ implements Serializable {
+public class BaseQueryVo extends BaseEntity {
 
     private int size = 10;
     private int current = 1;
-    private List<Long> ids;
+    private List<String> ids;
     private Map<String, Object> searchMap;
 
     @JsonIgnore
+    @JSONField(serialize=false)
     public int getSize() {
         return size;
     }
@@ -33,6 +34,7 @@ public class BaseQueryVｏ implements Serializable {
     }
 
     @JsonIgnore
+    @JSONField(serialize=false)
     public int getCurrent() {
         return current;
     }
@@ -41,14 +43,16 @@ public class BaseQueryVｏ implements Serializable {
         this.current = current;
     }
     @JsonIgnore
-    public List<Long> getIds() {
+    @JSONField(serialize=false)
+    public List<String> getIds() {
         return ids;
     }
 
-    public void setIds(List<Long> ids) {
+    public void setIds(List<String> ids) {
         this.ids = ids;
     }
     @JsonIgnore
+    @JSONField(serialize=false)
     public Map<String, Object> getSearchMap() {
         return searchMap==null?new HashMap<>():searchMap;
     }
