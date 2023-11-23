@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
 import java.lang.reflect.ParameterizedType;
+import java.util.HashSet;
+import java.util.Set;
 
 @Component
 public class BaseController<T extends BaseEntity, V extends BaseQueryVo, S extends BaseService<T, V>> {
@@ -22,9 +24,17 @@ public class BaseController<T extends BaseEntity, V extends BaseQueryVo, S exten
     @Autowired
     private S baseService;
 
+    //base方法的数据权限    Set<String> authSet =CollectionUtil.newHashSet("C","U","R","D");
+     HashSet<String> authSet =CollectionUtil.newHashSet();
+
+
 
     @PostMapping("/page")
     public R page(@RequestBody V vo) {
+        if(!authSet.contains("R")){
+            return R.err("无权限");
+        }
+
         Page<T> page = new Page<>(vo.getCurrent(), vo.getSize());
         page.addOrder( OrderItem.desc("ts"));
 
@@ -53,6 +63,10 @@ public class BaseController<T extends BaseEntity, V extends BaseQueryVo, S exten
 
     @GetMapping(value = "/detail/{id}")
     public R detail(@PathVariable Long id) {
+        if(!authSet.contains("R")){
+            return R.err("无权限");
+        }
+
         T one = baseService.getById(id);
         Object result = detailResult(one);
         if (result != null) {
@@ -69,6 +83,10 @@ public class BaseController<T extends BaseEntity, V extends BaseQueryVo, S exten
 
     @PostMapping(value = "/save")
     public R save(@RequestBody V vo) {
+        if(!authSet.contains("C")){
+            return R.err("无权限");
+        }
+
         if (vo.getId() != null) {
             return R.err("参数错误");
         }
@@ -79,6 +97,10 @@ public class BaseController<T extends BaseEntity, V extends BaseQueryVo, S exten
 
     @PostMapping(value = "/update")
     public R update(@RequestBody V vo) {
+        if(!authSet.contains("U")){
+            return R.err("无权限");
+        }
+
         if (vo.getId() == null) {
             return R.err("参数错误");
         }
@@ -93,6 +115,10 @@ public class BaseController<T extends BaseEntity, V extends BaseQueryVo, S exten
 
     @PostMapping(value = "/delete")
     public R delete(@RequestBody V vo) {
+        if(!authSet.contains("D")){
+            return R.err("无权限");
+        }
+
         if (vo.getId() == null) {
             return R.err("参数错误");
         }
@@ -101,6 +127,10 @@ public class BaseController<T extends BaseEntity, V extends BaseQueryVo, S exten
 
     @PostMapping(value = "/deleteBatch")
     public R deleteBatch(@RequestBody V vo) {
+        if(!authSet.contains("D")){
+            return R.err("无权限");
+        }
+
         if (CollectionUtil.isEmpty(vo.getIds())) {
             return R.err("参数错误");
         }
