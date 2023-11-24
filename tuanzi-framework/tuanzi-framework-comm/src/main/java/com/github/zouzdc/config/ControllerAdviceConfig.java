@@ -20,6 +20,7 @@ public class ControllerAdviceConfig {
 
     @ExceptionHandler(HttpMessageConversionException.class)
     public R handleHttpMessageConversionException(HttpServletRequest request, Throwable ex) {
+        log.warn("参数转换异常",ex);
         return R.err("参数转换异常",ex);
     }
   @ExceptionHandler(TzException.class)
