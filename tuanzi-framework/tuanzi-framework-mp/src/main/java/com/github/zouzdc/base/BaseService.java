@@ -1,10 +1,9 @@
 package com.github.zouzdc.base;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import org.springframework.transaction.annotation.Transactional;
 
 
-public interface BaseService<E,V> extends IService<E> {
+public interface BaseService<T,V> extends IService<T> {
 
 
     /**

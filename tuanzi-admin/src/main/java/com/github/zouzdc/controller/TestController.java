@@ -1,7 +1,11 @@
 package com.github.zouzdc.controller;
 
+import com.github.zouzdc.base.BaseEntity;
+import com.github.zouzdc.base.BaseQueryVo;
 import com.github.zouzdc.exception.TzException;
 import com.github.zouzdc.pojo.R;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -24,4 +28,15 @@ public class TestController {
             throw new TzException("错误");
         return R.ok();
     }
+
+    @PostMapping("/test")
+    public R test(@RequestBody BaseQueryVo vo) {
+        return R.ok(vo);
+    }
+
+    @PostMapping("/test2")
+    public R test2(@RequestBody BaseQueryVo vo) {
+        return R.ok();
+    }
+
 }

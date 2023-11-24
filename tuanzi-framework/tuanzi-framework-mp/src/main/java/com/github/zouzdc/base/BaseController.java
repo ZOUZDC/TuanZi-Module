@@ -16,12 +16,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 import java.lang.reflect.ParameterizedType;
 import java.util.HashSet;
-import java.util.Set;
 
-@Component
+
 public class BaseController<T extends BaseEntity, V extends BaseQueryVo, S extends BaseService<T, V>> {
 
-    @Autowired
+    @Autowired(required = false)
     private S baseService;
 
     //base方法的数据权限    Set<String> authSet =CollectionUtil.newHashSet("C","U","R","D");

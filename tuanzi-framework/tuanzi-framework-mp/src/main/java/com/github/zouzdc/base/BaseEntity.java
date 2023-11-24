@@ -2,37 +2,36 @@ package com.github.zouzdc.base;
 
 import com.baomidou.mybatisplus.annotation.FieldFill;
 import com.baomidou.mybatisplus.annotation.TableField;
-import com.fhs.core.trans.vo.TransPojo;
 import com.github.zouzdc.pojo.base.SuperIdEntity;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
 /**
  * Entity基类
  */
 @Data
 @NoArgsConstructor
-public abstract class BaseEntity implements SuperIdEntity,TransPojo {
+public abstract class BaseEntity implements SuperIdEntity {
 
     @TableField(fill = FieldFill.INSERT)
     private String createBy;
 
     @TableField(fill = FieldFill.INSERT)
-    private Date createTime;
+    private LocalDateTime createTime;
 
     @TableField(fill = FieldFill.INSERT_UPDATE)
     private String updateBy;
 
     @TableField(fill = FieldFill.INSERT_UPDATE)
-    private Date updateTime;
+    private LocalDateTime updateTime;
 
     @TableField(fill = FieldFill.INSERT)
     private Integer delFlag;
 
     @TableField(fill = FieldFill.INSERT_UPDATE)
-    private Date ts;
+    private LocalDateTime ts;
 
     private Integer vs;
 

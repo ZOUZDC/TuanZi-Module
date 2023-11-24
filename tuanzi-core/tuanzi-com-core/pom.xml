@@ -26,10 +26,10 @@
             <groupId>com.alibaba.fastjson2</groupId>
             <artifactId>fastjson2</artifactId>
         </dependency>
-        <dependency>
+      <!--  <dependency>
             <groupId>com.fhs-opensource</groupId>
             <artifactId>easy-trans-spring-boot-starter</artifactId>
-        </dependency>
+        </dependency>-->
     </dependencies>
 
 </project>

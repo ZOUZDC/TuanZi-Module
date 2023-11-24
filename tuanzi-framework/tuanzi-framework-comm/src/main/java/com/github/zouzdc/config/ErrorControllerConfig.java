@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping({"${server.error.path:${error.path:/error}}"})
-public class MyErrorController implements ErrorController {
+public class ErrorControllerConfig implements ErrorController {
 
 
 

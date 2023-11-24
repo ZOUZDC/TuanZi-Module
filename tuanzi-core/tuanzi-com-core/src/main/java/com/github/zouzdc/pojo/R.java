@@ -10,12 +10,16 @@ import java.util.HashMap;
  */
 public class R<T> extends HashMap<String, Object> {
 
+    public R(int code, String msg, Object data, Object err) {
+        this(code, msg, data);
+        // 当500时存在
+        this.put("err", "");
+    }
+
     public R(int code, String msg, Object data) {
         this.put("code", code);
         this.put("msg", msg);
         this.put("data", data);
-        // 当500时存在
-        //this.put("err", "");
     }
 
 
@@ -44,8 +48,9 @@ public class R<T> extends HashMap<String, Object> {
     public static R ok(Object... data) {
         return new R(200, "OK", integrationData(data));
     }
+
     public static R okMsg(String msg) {
-        return new R(200, msg,null);
+        return new R(200, msg, null);
     }
 
     /**
@@ -59,23 +64,24 @@ public class R<T> extends HashMap<String, Object> {
     }
 
     /**
-     * @description 操作失败,系统调用
+     * @description 操作失败, 系统调用
      * @version 1.0.0
      * @date 2023/11/9 21:19
      * @author ZDC
      */
-    public static R err(Throwable ex) {
-        return new R(500, ex.getMessage()=="null"?"系统错误": ex.getMessage(), null).addErr(ex);
+    public static R err(String msg ,Throwable ex) {
+        return new R(500, msg ==null ? "系统错误" : msg, null).addErr(ex);
     }
 
     /**
      * 获取data数据
+     *
      * @return 返回获取到的数据，如果数据为空，则返回null
      */
-    public  T getData(){
+    public T getData() {
         Object data = this.get("data");
-        if (data!=null){
-            return (T)data;
+        if (data != null) {
+            return (T) data;
         }
         return null;
     }
@@ -98,12 +104,10 @@ public class R<T> extends HashMap<String, Object> {
     }
 
 
-
-
     private static Object integrationData(Object... data) {
-        int length=0;
+        int length = 0;
 
-        if (data == null || (length =data.length)== 0 ) {
+        if (data == null || (length = data.length) == 0) {
             return null;
         }
 
