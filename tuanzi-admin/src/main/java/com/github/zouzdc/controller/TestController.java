@@ -4,6 +4,7 @@ import com.github.zouzdc.base.BaseEntity;
 import com.github.zouzdc.base.BaseQueryVo;
 import com.github.zouzdc.exception.TzException;
 import com.github.zouzdc.pojo.R;
+import com.github.zouzdc.pojo.TestXx;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -35,8 +36,13 @@ public class TestController {
     }
 
     @PostMapping("/test2")
-    public R test2(@RequestBody BaseQueryVo vo) {
-        return R.ok();
+    public R test2(@RequestBody TestXx vo) {
+        return R.ok(vo);
+    }
+
+    @PostMapping("/test3")
+    public R test3(TestXx vo) {
+        return R.ok(vo);
     }
 
 }

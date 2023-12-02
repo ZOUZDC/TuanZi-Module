@@ -8,7 +8,6 @@ import com.baomidou.mybatisplus.core.metadata.OrderItem;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.github.zouzdc.pojo.R;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -23,7 +22,7 @@ public class BaseController<T extends BaseEntity, V extends BaseQueryVo, S exten
     @Autowired(required = false)
     private S baseService;
 
-    //base方法的数据权限    Set<String> authSet =CollectionUtil.newHashSet("C","U","R","D");
+
      HashSet<String> authSet =CollectionUtil.newHashSet();
 
 

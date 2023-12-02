@@ -32,6 +32,7 @@ public class ControllerAdviceConfig {
     /*放在最低下,兜底*/
     @ExceptionHandler(Exception.class)
     public R handleException(HttpServletRequest request, Throwable ex) {
+        log.warn("系统异常{}",ex);
         return R.err(null,ex);
     }
 
