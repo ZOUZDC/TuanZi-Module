@@ -12,11 +12,12 @@ import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.Locale;
 
+
 /**
- * Date类型数据 针对于PathVariable、RequestParam参数的反序列化
- *
+ * @description Date类型数据 针对于PathVariable、RequestParam参数的反序列化
+ * @version 1.0.0
+ * @date 2023/12/2 22:25
  * @author ZDC
- * @date 2023/12/2 16:08
  */
 @Configuration
 public class DateConverConfiguration implements WebMvcConfigurer {

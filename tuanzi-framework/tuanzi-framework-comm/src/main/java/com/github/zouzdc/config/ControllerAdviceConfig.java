@@ -9,10 +9,10 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 /**
+ * @description 全局异常捕获
+ * @version 1.0.0
+ * @date 2023/12/2 22:26
  * @author ZDC
- * @Description //全局异常捕获
- * @Version 1.0.0
- * @Date 2023/11/2 23:29
  */
 @Slf4j
 @RestControllerAdvice
