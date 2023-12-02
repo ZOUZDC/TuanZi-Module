@@ -58,8 +58,8 @@ public class JacksonConfig {
             builder.serializerByType(LocalDate.class,  new LocalDateSerializer(DateTimeFormatter.ofPattern(CoreConstant.DATE_FORMAT)));
             builder.deserializerByType(LocalDate.class, new LocalDateDeserializer(DateTimeFormatter.ofPattern(CoreConstant.DATE_FORMAT)));
 
-            builder.serializerByType(LocalTime.class, new LocalTimeSerializer(DateTimeFormatter.ofPattern(CoreConstant.TIME_FORMAT)));
-            builder.deserializerByType(LocalTime.class,  new LocalTimeDeserializer(DateTimeFormatter.ofPattern(CoreConstant.TIME_FORMAT)));
+//            builder.serializerByType(LocalTime.class, new LocalTimeSerializer(DateTimeFormatter.ofPattern(CoreConstant.TIME_FORMAT)));
+//            builder.deserializerByType(LocalTime.class,  new LocalTimeDeserializer(DateTimeFormatter.ofPattern(CoreConstant.TIME_FORMAT)));
 
             builder.serializerByType(Date.class,jsonSerializer);
             builder.deserializerByType(Date.class, jsonDeserializer);
@@ -67,8 +67,6 @@ public class JacksonConfig {
             builder.serializerByType(Long.class, ToStringSerializer.instance);
             builder.serializerByType(Long.TYPE,  ToStringSerializer.instance);
             builder.serializerByType(BigInteger.class,  ToStringSerializer.instance);
-
-
 
             builder.failOnUnknownProperties(false);
             builder.featuresToDisable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);

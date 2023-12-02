@@ -18,8 +18,8 @@ public class TestXx {
     private LocalTime localTime;
     private LocalDateTime localDateTime;
     private Date date;
-    private Long longu;
-    private long longl;
+    private Long longUp;
+    private long longLow;
     private BigInteger bigInteger;
     private Integer integer;
 

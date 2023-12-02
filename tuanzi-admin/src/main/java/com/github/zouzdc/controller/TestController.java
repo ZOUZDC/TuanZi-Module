@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @Date 2023/11/2 23:44
  */
 @RestController
+@RequestMapping("/test")
 public class TestController {
     @RequestMapping("/")
     public R ok() {
@@ -35,13 +36,14 @@ public class TestController {
         return R.ok(vo);
     }
 
-    @PostMapping("/test2")
-    public R test2(@RequestBody TestXx vo) {
+    @PostMapping("/testBody")
+    public R testBody(@RequestBody TestXx vo) {
         return R.ok(vo);
     }
 
-    @PostMapping("/test3")
-    public R test3(TestXx vo) {
+    @PostMapping("/testPath")
+    public R testPath(TestXx vo) {
+        System.out.println(vo.toString());
         return R.ok(vo);
     }
 
