@@ -21,7 +21,7 @@ public class SuperQueryVo implements SuperIdEntity {
     private int current = 1;
     private Map<String, Object> searchMap;
 
-    @JsonIgnore
+
     @JSONField(serialize=false)
     public int getSize() {
         return size<0?10:size;
@@ -31,7 +31,7 @@ public class SuperQueryVo implements SuperIdEntity {
         this.size = size;
     }
 
-    @JsonIgnore
+
     @JSONField(serialize=false)
     public int getCurrent() {
         return current<1?1:current;
@@ -41,7 +41,7 @@ public class SuperQueryVo implements SuperIdEntity {
         this.current = current;
     }
 
-    @JsonIgnore
+
     @JSONField(serialize=false)
     public Map<String, Object> getSearchMap() {
         return searchMap==null?new HashMap<>():searchMap;

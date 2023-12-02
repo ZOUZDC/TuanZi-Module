@@ -33,7 +33,7 @@ public abstract class BaseEntity implements SuperIdEntity {
     @TableField(fill = FieldFill.INSERT_UPDATE)
     private LocalDateTime ts;
 
-    private Integer vs;
+
 
 
 
