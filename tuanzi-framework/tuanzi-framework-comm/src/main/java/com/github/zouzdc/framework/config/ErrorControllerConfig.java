@@ -1,6 +1,6 @@
-package com.github.zouzdc.config;
+package com.github.zouzdc.framework.config;
 
-import com.github.zouzdc.pojo.R;
+import com.github.zouzdc.core.pojo.R;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.extern.slf4j.Slf4j;

@@ -1,4 +1,4 @@
-package com.github.zouzdc.config;
+package com.github.zouzdc.framework.config;
 
 
 import jakarta.servlet.FilterChain;

@@ -1,4 +1,4 @@
-package com.github.zouzdc.pojo;
+package com.github.zouzdc.admin.pojo;
 
 import lombok.Data;
 import lombok.ToString;
@@ -15,7 +15,7 @@ import java.util.Date;
 public class TestXx {
     private String name;
     private LocalDate localDate;
-    private LocalTime localTime;
+
     private LocalDateTime localDateTime;
     private Date date;
     private Long longUp;

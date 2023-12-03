@@ -86,6 +86,16 @@
                 <version>2.0.41</version>
             </dependency>
             <dependency>
+                <groupId>com.github.xiaoymin</groupId>
+                <artifactId>knife4j-openapi3-jakarta-spring-boot-starter</artifactId>
+                <version>4.3.0</version>
+            </dependency>
+
+
+
+
+            <!--以下考虑抛弃-->
+            <dependency>
                 <groupId>com.fhs-opensource</groupId>
                 <artifactId>easy-trans-spring-boot-starter</artifactId>
                 <version>2.2.9</version>

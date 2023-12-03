@@ -5,6 +5,9 @@ tuanzi:
   version: @project.version@
 
 spring:
+  profiles:
+    include: openapi
+    active: prod
   main:
     allow-bean-definition-overriding: true
   datasource:

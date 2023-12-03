@@ -1,4 +1,4 @@
-package com.github.zouzdc.config;
+package com.github.zouzdc.framework.config;
 
 import cn.hutool.core.date.DateUtil;
 import org.springframework.boot.autoconfigure.web.format.WebConversionService;

@@ -1,4 +1,4 @@
-package com.github.zouzdc.constant;
+package com.github.zouzdc.core.constant;
 
 import cn.hutool.core.collection.CollectionUtil;
 

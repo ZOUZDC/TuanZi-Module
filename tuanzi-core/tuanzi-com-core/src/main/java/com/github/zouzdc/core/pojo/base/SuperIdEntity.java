@@ -1,4 +1,4 @@
-package com.github.zouzdc.pojo.base;
+package com.github.zouzdc.core.pojo.base;
 
 import java.io.Serializable;
 

@@ -1,14 +1,10 @@
-package com.github.zouzdc.controller;
+package com.github.zouzdc.admin.controller;
 
-import com.github.zouzdc.base.BaseEntity;
-import com.github.zouzdc.base.BaseQueryVo;
-import com.github.zouzdc.exception.TzException;
-import com.github.zouzdc.pojo.R;
-import com.github.zouzdc.pojo.TestXx;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.github.zouzdc.framework.base.BaseQueryVo;
+import com.github.zouzdc.core.exception.TzException;
+import com.github.zouzdc.core.pojo.R;
+import com.github.zouzdc.admin.pojo.TestXx;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @author ZDC
@@ -19,12 +15,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/test")
 public class TestController {
-    @RequestMapping("/")
+    @GetMapping("/")
     public R ok() {
         return R.ok();
     }
 
-    @RequestMapping("/err")
+    @GetMapping("/err")
     public R err() {
         if (1 / 0 == 1)
             throw new TzException("错误");

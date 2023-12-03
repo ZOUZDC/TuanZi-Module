@@ -1,4 +1,4 @@
-package com.github.zouzdc.exception;
+package com.github.zouzdc.core.exception;
 
 /**
  * @author ZDC
