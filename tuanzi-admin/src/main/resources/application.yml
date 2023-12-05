@@ -1,13 +1,10 @@
-server:
-  port: 80
-
 tuanzi:
   version: @project.version@
 
 spring:
   profiles:
-    include: openapi
-    active: prod
+    include: zspringdoc
+    active: dev
   main:
     allow-bean-definition-overriding: true
   datasource:
@@ -17,11 +14,3 @@ spring:
         url: jdbc:mysql://ry-vue/lctele_module?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8&nullCatalogMeansCurrent=true
         username: root
         password: 123123
-
-
-easy-trans:
-  is-enable-redis:  false
-  #启用全局翻译(拦截所有responseBody进行自动翻译)，如果对于性能要求很高可关闭此配置
-  is-enable-global: false
-  #启用平铺模式
-  is-enable-tile: true

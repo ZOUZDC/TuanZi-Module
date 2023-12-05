@@ -1,10 +1,10 @@
 # springdoc-openapi项目配置
+#为保证配置文件放在最后 必须以z开头
+#为了安全,请确保在正式环境中关闭swagger-ui,api-docs
 springdoc:
   swagger-ui:
-    enabled: true
+    enabled: false
     path: /swagger-ui.html
-    tags-sorter: alpha
-    operations-sorter: alpha
   api-docs:
     enabled: true
     path: /v3/api-docs
@@ -13,10 +13,3 @@ springdoc:
       paths-to-match: '/**'
       packages-to-scan: com.github.zouzdc.admin
   paths-to-exclude: '/error'
-# knife4j的增强配置，不需要增强可以不配
-knife4j:
-  enable: true
-#  生产环境屏蔽
-  production: true
-  setting:
-    language: zh_cn

@@ -17,4 +17,13 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
+
+    <dependencies>
+        <dependency>
+            <groupId>com.github.zouzdc</groupId>
+            <artifactId>tuanzi-biz-core</artifactId>
+            <version>${revision}</version>
+        </dependency>
+    </dependencies>
+
 </project>

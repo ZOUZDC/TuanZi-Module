@@ -23,7 +23,6 @@
             <artifactId>tuanzi-com-core</artifactId>
             <version>${revision}</version>
         </dependency>
-
     </dependencies>
 
 </project>
