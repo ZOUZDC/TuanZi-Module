@@ -1,8 +1,8 @@
 package com.github.zouzdc.admin.controller;
 
-import com.github.zouzdc.framework.base.BaseQueryVo;
+import com.github.zouzdc.framework.domain.base.BaseQueryVo;
 import com.github.zouzdc.core.exception.TzException;
-import com.github.zouzdc.core.pojo.R;
+import com.github.zouzdc.core.domain.R;
 import com.github.zouzdc.admin.pojo.TestXx;
 import org.springframework.web.bind.annotation.*;
 

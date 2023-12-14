@@ -1,0 +1,23 @@
+package ${package}.${moduleName}.dao;
+
+import ${package}.${moduleName}.domain.entity.${className}Entity;
+import ${package}.${moduleName}.domain.vo.${className}Vo;
+
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import org.apache.ibatis.annotations.Mapper;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import org.apache.ibatis.annotations.Param;
+
+/**
+ * ${comments}
+ *
+ * @author ${author}
+ * @email ${email}
+ * @date ${datetime}
+ */
+@Mapper
+public interface ${className}Mapper extends BaseMapper<${className}Entity> {
+
+    Page<${className}Vo> pageList(@Param("page") Page<${className}Vo> page, @Param("vo") ${className}Vo vo);
+
+}

@@ -1,4 +1,4 @@
-package com.github.zouzdc.framework.base;
+package com.github.zouzdc.framework.domain.base;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 

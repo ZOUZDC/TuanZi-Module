@@ -1,8 +1,8 @@
-package com.github.zouzdc.framework.base;
+package com.github.zouzdc.framework.domain.base;
 
 import com.baomidou.mybatisplus.annotation.FieldFill;
 import com.baomidou.mybatisplus.annotation.TableField;
-import com.github.zouzdc.core.pojo.base.SuperIdEntity;
+import com.github.zouzdc.core.domain.base.SuperIdEntity;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 

@@ -1,4 +1,4 @@
-package com.github.zouzdc.core.pojo;
+package com.github.zouzdc.core.domain;
 
 import java.util.HashMap;
 

@@ -1,7 +1,7 @@
 package com.github.zouzdc.framework.config;
 
 import com.github.zouzdc.core.exception.TzException;
-import com.github.zouzdc.core.pojo.R;
+import com.github.zouzdc.core.domain.R;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.converter.HttpMessageConversionException;

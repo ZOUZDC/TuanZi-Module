@@ -37,11 +37,13 @@ public class TuanZiRunner implements CommandLineRunner {
                 小团子
                 版本:%s
                 当前激活配置:%s
+                当前监听端口:%s
                 接口文档:%s
                 ---------------------------------------------
                 """.formatted(
                 p("tuanzi.version"),
                 p("spring.profiles.active"),
+                p("server.port"),
                 peq("springdoc.swagger-ui.enabled", "false", "false")?"未启动":p("springdoc.swagger-ui.path")
 
         );
