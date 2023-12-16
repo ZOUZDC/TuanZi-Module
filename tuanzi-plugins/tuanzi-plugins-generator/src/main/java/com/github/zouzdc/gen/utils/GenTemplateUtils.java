@@ -2,7 +2,9 @@ package com.github.zouzdc.gen.utils;
 
 
 import cn.hutool.core.collection.CollectionUtil;
+import com.github.zouzdc.core.exception.TzException;
 import com.github.zouzdc.gen.domain.pojo.*;
+import org.springframework.core.io.ClassPathResource;
 
 import java.util.List;
 import java.util.Map;
@@ -15,12 +17,24 @@ import java.util.Map;
  */
 public class GenTemplateUtils {
 
-    public static void main(String[] args) {
+    public static void main1(String[] args) {
+
+        //寻找模版包信息,加载path.yml
+
+
+        ClassPathResource classPathResource = new ClassPathResource("static/assets/test.txt");
+
+
+            //configInfo = YamlUtil.load(resource.getInputStream(), TemplateConfigInfo.class);
+
 
         TemplateConfigInfo configInfo = new TemplateConfigInfo();
 
         //检查模版信息
         checkTemplateInfo(configInfo);
+
+        if(1==1)
+            return;
 
         //数据库连接信息
         DbInfo dbInfo = new DbInfo(
@@ -59,6 +73,12 @@ public class GenTemplateUtils {
      */
     private static void checkTemplateInfo(TemplateConfigInfo configInfo) {
         List<TemplateInfo> templates = configInfo.getTemplates();
+        if(CollectionUtil.isEmpty(templates)){
+            throw new TzException("模版信息不能为空");
+        }
+
+
+
     }
 
 

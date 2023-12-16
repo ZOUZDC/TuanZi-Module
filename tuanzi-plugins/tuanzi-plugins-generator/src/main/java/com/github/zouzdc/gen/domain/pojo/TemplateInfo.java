@@ -14,7 +14,7 @@ import java.io.Serializable;
 public class TemplateInfo implements Serializable {
 
     /**
-     * 模版信息列表 例:mp/entity.vm ,mp/mapper.vm
+     * 模版文件路径 例:mp/entity.vm ,mp/mapper.vm
      * 默认查找位置为src/main/resources/下, 模版文件放在一个专属的文件夹内
      */
     private String path;
@@ -23,6 +23,10 @@ public class TemplateInfo implements Serializable {
      * 基础包路径
      */
     private String basePackage;
+    /**
+     * 模块名
+     */
+    private String moduleName;
 
     /**
      * 相对包路径
@@ -30,5 +34,19 @@ public class TemplateInfo implements Serializable {
      */
     private String relativePackage;
 
+    /**
+     * 文件名前缀
+     */
+    private String fileNamePrefix ="";
+
+    /**
+     * 文件名后缀
+     */
+    private String fileNameSuffix="";
+
+    /**
+     * 文件类型 不用添加.
+     */
+    private String fileType;
 
 }

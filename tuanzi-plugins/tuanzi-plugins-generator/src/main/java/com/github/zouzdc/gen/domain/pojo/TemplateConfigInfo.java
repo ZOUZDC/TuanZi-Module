@@ -1,13 +1,12 @@
 package com.github.zouzdc.gen.domain.pojo;
 
 import cn.hutool.core.util.StrUtil;
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
-import org.springframework.util.StringUtils;
 
 import java.io.Serializable;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
@@ -21,6 +20,11 @@ import java.util.stream.Collectors;
 @Data
 public class TemplateConfigInfo implements Serializable {
 
+
+    /**
+     * 数据库连接信息
+     */
+    private DbInfo dbInfo;
 
     /**
      * 模版信息列表
