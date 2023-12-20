@@ -2,10 +2,18 @@ package com.github.zouzdc.gen.utils;
 
 
 import cn.hutool.core.collection.CollectionUtil;
+import cn.hutool.json.JSONUtil;
+import cn.hutool.setting.yaml.YamlUtil;
+import com.github.zouzdc.core.constant.CoreConstant;
 import com.github.zouzdc.core.exception.TzException;
+import com.github.zouzdc.core.utils.ResourceUtils;
 import com.github.zouzdc.gen.domain.pojo.*;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.core.io.ClassPathResource;
+import org.springframework.core.io.Resource;
 
+import java.io.IOException;
+import java.nio.charset.Charset;
 import java.util.List;
 import java.util.Map;
 
@@ -15,9 +23,10 @@ import java.util.Map;
  * @date 2023/12/5 21:11
  * @author ZDC
  */
+@Slf4j
 public class GenTemplateUtils {
 
-    public static void main1(String[] args) {
+    public static void main(String[] args) {
 
         //寻找模版包信息,加载path.yml
 
@@ -28,7 +37,32 @@ public class GenTemplateUtils {
             //configInfo = YamlUtil.load(resource.getInputStream(), TemplateConfigInfo.class);
 
 
-        TemplateConfigInfo configInfo = new TemplateConfigInfo();
+        PathConfigInfo configInfo = new PathConfigInfo();
+
+
+
+
+        Resource[] resources=null;
+        try {
+            resources = ResourceUtils.getResources("classpath*:/template/*/path.json");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+        if(resources==null||resources.length==0){
+            throw new TzException("没有检测到模版配置信息[path.json]");
+        }
+        for (Resource resource : resources) {
+            if (!resource.exists()) {
+                continue;
+            }
+            try {
+                configInfo =JSONUtil.toBean(resource.getContentAsString(CoreConstant.UTF_8_CHARSET), PathConfigInfo.class);
+            } catch (IOException e) {
+                log.error("读取模版配置信息失败", e);
+                continue;
+            }
+        }
 
         //检查模版信息
         checkTemplateInfo(configInfo);
@@ -39,7 +73,7 @@ public class GenTemplateUtils {
         //数据库连接信息
         DbInfo dbInfo = new DbInfo(
                 "com.mysql.cj.jdbc.Driver",
-                "jdbc:mysql://127.0.0.1:3306/ry-vue?useUnicode=true&characterEncoding=utf8&serverTimezone=GMT%2B8",
+                "jdbc:mysql://127.0.0.1:3306/zdc?useUnicode=true&characterEncoding=utf8&serverTimezone=GMT%2B8",
                 "root",
                 "123123",
                 "ry-vue"
@@ -53,12 +87,8 @@ public class GenTemplateUtils {
         //sql到实体类型转换信息
         sqlInfo2JavaInfo(list,configInfo);
 
-
-
         //全局定义参量
         Map<String, String> globalVariable = configInfo.getGlobalVariable();
-
-        //sql到实体类型转换信息
 
         //模版信息
 
@@ -71,18 +101,14 @@ public class GenTemplateUtils {
      * 检查模版信息
      * @param configInfo
      */
-    private static void checkTemplateInfo(TemplateConfigInfo configInfo) {
-        List<TemplateInfo> templates = configInfo.getTemplates();
-        if(CollectionUtil.isEmpty(templates)){
+    private static void checkTemplateInfo(PathConfigInfo configInfo) {
+        if(configInfo==null || CollectionUtil.isEmpty(configInfo.getTemplates())){
             throw new TzException("模版信息不能为空");
         }
-
-
-
     }
 
 
-    public  static void sqlInfo2JavaInfo( List<GenTable> list, TemplateConfigInfo configInfo) {
+    public  static void sqlInfo2JavaInfo( List<GenTable> list, PathConfigInfo configInfo) {
         if(CollectionUtil.isEmpty(list)){
             return;
         }

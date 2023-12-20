@@ -20,7 +20,7 @@
     <dependencies>
         <dependency>
             <groupId>com.github.zouzdc</groupId>
-            <artifactId>tuanzi-com-core</artifactId>
+            <artifactId>tuanzi-biz-core</artifactId>
             <version>${revision}</version>
         </dependency>
     </dependencies>

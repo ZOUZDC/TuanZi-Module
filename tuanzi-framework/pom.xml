@@ -24,6 +24,7 @@
     </modules>
 
     <dependencies>
+
         <dependency>
             <groupId>com.github.zouzdc</groupId>
             <artifactId>tuanzi-com-core</artifactId>

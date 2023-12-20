@@ -1,0 +1,34 @@
+{
+  "name": "m1",
+  "version":  "1.0",
+  "description":  "m1", 
+  "?typeMapping": "模版信息",
+  "templates":  [
+    { "path": "Entity.java.vm","basePackage": "","moduleName": "","relativePackage": "domain.entity","fileType": ".java","prePath": "src.main.java" },
+    { "path": "Vo.java.vm","basePackage": "","moduleName": "","relativePackage": "domain.vo","fileType": ".java","prePath": "src.main.java" },
+    { "path": "Controller.java.vm","basePackage": "","moduleName": "","relativePackage": "controller","fileType": ".java","prePath": "src.main.java" },
+    { "path": "Service.java.vm","basePackage": "","moduleName": "","relativePackage": "service","fileType": ".java","prePath": "src.main.java" },
+    { "path": "ServiceImpl.java.vm","basePackage": "","moduleName": "","relativePackage": "service.impl","fileType": ".java","prePath": "src.main.java" },
+    { "path": "Dao.java.vm","basePackage": "","moduleName": "","relativePackage": "dao","fileType": ".java","prePath": "src.main.java" },
+    { "path": "Dao.xml.vm","basePackage": "","moduleName": "","relativePackage": "service","fileType": ".java","prePath": "src.main.resources" },
+    { "path": "index.vue.vm","fileType": ".vue","prePath": "vue.[zdc]","forceName": "index" },
+    { "path": "add-or-update.vue.vm","fileType": ".vue","prePath": "vue.[zdc]","forceName": "[tz]-aou" }
+  ],
+  "?typeMapping": "全局变量信息",
+  "globalVariable": {
+
+  },
+  "?typeMapping": "类型映射信息",
+  "typeMapping": [
+    { "sqlType": "varchar","javaType": "String" },
+    { "sqlType": "decimal","javaType": "BigDecimal","importInfo": "java.math.BigDecimal" }
+  ],
+  "?dbInfo": "数据库信息,不建议在此处直接使用",
+  "dbInfo": {
+    "driverClassName": "com.mysql.cj.jdbc.Driver",
+    "url": "jdbc:mysql://127.0.0.1:3306/zdc?useUnicode=true&characterEncoding=utf8&serverTimezone=GMT%2B8",
+    "username": "不建议在此处使用",
+    "password": "不建议在此处使用",
+    "schema": "zdc"
+  }
+}
