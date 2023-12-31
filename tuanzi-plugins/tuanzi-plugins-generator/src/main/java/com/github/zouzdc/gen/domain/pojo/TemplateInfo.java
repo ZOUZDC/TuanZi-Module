@@ -73,6 +73,10 @@ public class TemplateInfo implements Serializable {
      * 如无特殊变量值 ,则 fileNamePrefix,fileNameSuffix规则将不再生效
      */
     private String forceName="";
+    /**
+     * 首字母小写
+     */
+    private boolean firstLowerCase = true;
 
 
 

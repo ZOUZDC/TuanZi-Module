@@ -1,5 +1,6 @@
 package com.github.zouzdc.gen.domain.pojo;
 
+import com.alibaba.fastjson2.JSON;
 import lombok.Data;
 
 import java.io.Serializable;
@@ -19,12 +20,25 @@ public class GenVariable extends HashMap<String, String> {
     /**
      *     作者
      */
-    private String author;
+    public static final String author="author";
+
     /**
      * 精确匹配
-     * true: 精确匹配
-     * false: 小写匹配
+     * TRUE: 精确匹配
+     * FALSE: 小写匹配
      */
-    private String exactMatch;
+    public static final String exactMatch="exactMatch";
+
+
+    public GenVariable() {
+        super();
+
+        put(author,"");
+        put(exactMatch,"");
+
+
+
+    }
+
 
 }

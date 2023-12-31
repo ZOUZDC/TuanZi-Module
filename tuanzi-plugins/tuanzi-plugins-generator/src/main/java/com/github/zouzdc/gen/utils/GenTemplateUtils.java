@@ -9,6 +9,7 @@ import com.github.zouzdc.core.exception.TzException;
 import com.github.zouzdc.core.utils.ResourceUtils;
 import com.github.zouzdc.gen.domain.pojo.*;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.velocity.app.Velocity;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
 
@@ -16,6 +17,7 @@ import java.io.IOException;
 import java.nio.charset.Charset;
 import java.util.List;
 import java.util.Map;
+import java.util.Properties;
 
 /**
  * @description 代码生成器
@@ -30,16 +32,7 @@ public class GenTemplateUtils {
 
         //寻找模版包信息,加载path.yml
 
-
-        ClassPathResource classPathResource = new ClassPathResource("static/assets/test.txt");
-
-
-            //configInfo = YamlUtil.load(resource.getInputStream(), TemplateConfigInfo.class);
-
-
         PathConfigInfo configInfo = new PathConfigInfo();
-
-
 
 
         Resource[] resources=null;
@@ -67,8 +60,6 @@ public class GenTemplateUtils {
         //检查模版信息
         checkTemplateInfo(configInfo);
 
-        if(1==1)
-            return;
 
         //数据库连接信息
         DbInfo dbInfo = new DbInfo(
@@ -87,12 +78,17 @@ public class GenTemplateUtils {
         //sql到实体类型转换信息
         sqlInfo2JavaInfo(list,configInfo);
 
-        //全局定义参量
+        //全局自定义参量覆盖系统参量
         Map<String, String> globalVariable = configInfo.getGlobalVariable();
 
-        //模版信息
-
         //转换
+        List<TemplateInfo> templates = configInfo.getTemplates();
+
+
+        //设置velocity资源加载器
+        Properties prop = new Properties();
+        prop.put("file.resource.loader.class", "org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader");
+        Velocity.init(prop);
 
 
     }
@@ -119,7 +115,7 @@ public class GenTemplateUtils {
         Map<String, TypeMappingInfo> typeMapLc=null;
 
         //加载小写映射关系
-        if (!"true".equalsIgnoreCase(globalVariable.getExactMatch())) {
+        if (!"true".equalsIgnoreCase(globalVariable.get(globalVariable.exactMatch))) {
             typeMapLc = configInfo.getTypeMapping2MapKeyLowerCase();
         }
 
